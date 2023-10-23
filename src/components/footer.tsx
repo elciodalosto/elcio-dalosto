@@ -1,24 +1,46 @@
+import GitHub from './svgs/github'
+import Envelope from './svgs/envelope'
+import LinkedIn from './svgs/linkedin'
+import contactStyles from '../styles/contact.module.css'
 import ExtLink from './ext-link'
 
+const contacts = [
+  {
+    Comp: GitHub,
+    alt: 'github icon',
+    link: 'https://github.com/elciodalosto',
+  },
+  {
+    Comp: LinkedIn,
+    alt: 'linkedin icon',
+    link: 'https://www.linkedin.com/in/elciodalosto',
+  },
+  {
+    Comp: Envelope,
+    alt: 'envelope icon',
+    link: 'mailto:edalosto@gmail.com?subject=Contato a partir do site pessoal',
+  },
+]
 export default function Footer() {
   return (
     <>
       <footer>
-        <span>Deploy your own!</span>
-        <ExtLink href="https://vercel.com/new/git/external?repository-url=https://github.com/ijjk/notion-blog/tree/main&project-name=notion-blog&repository-name=notion-blog">
-          <img
-            src="https://vercel.com/button"
-            height={46}
-            width={132}
-            alt="deploy to Vercel button"
-          />
-        </ExtLink>
-        <span>
-          or{' '}
-          <ExtLink href="https://github.com/ijjk/notion-blog">
-            view source
-          </ExtLink>
-        </span>
+        <div className={contactStyles.links}>
+          <hr />
+          <br />
+
+          {contacts.map(({ Comp, link, alt }) => {
+            return (
+              <ExtLink key={link} href={link} aria-label={alt}>
+                <Comp height={32} />
+              </ExtLink>
+            )
+          })}
+          <div>
+            <p>2023 | Elcio Augusto Dalosto</p>
+            <p>E-mail: edalosto@gmail.com</p>
+          </div>
+        </div>
       </footer>
     </>
   )

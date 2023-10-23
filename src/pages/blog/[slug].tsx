@@ -121,7 +121,7 @@ const RenderPost = ({ post, redirect, preview }) => {
   // If the page is not yet generated, this will be displayed
   // initially until getStaticProps() finishes running
   if (router.isFallback) {
-    return <div>Loading...</div>
+    return <div>Carregando...</div>
   }
 
   // if you don't have a post at this point, and are not
@@ -130,7 +130,8 @@ const RenderPost = ({ post, redirect, preview }) => {
     return (
       <div className={blogStyles.post}>
         <p>
-          Woops! didn't find that post, redirecting you back to the blog index
+          Opa! Alguma treta aconteceu e não encontrei a publicação. Estou te
+          redirecionando para o índice do blog
         </p>
       </div>
     )
@@ -142,10 +143,12 @@ const RenderPost = ({ post, redirect, preview }) => {
       {preview && (
         <div className={blogStyles.previewAlertContainer}>
           <div className={blogStyles.previewAlert}>
-            <b>Note:</b>
-            {` `}Viewing in preview mode{' '}
+            <b>Nota:</b>
+            {` `}Modo de pré-visualização{' '}
             <Link href={`/api/clear-preview?slug=${post.Slug}`}>
-              <button className={blogStyles.escapePreview}>Exit Preview</button>
+              <button className={blogStyles.escapePreview}>
+                Sair da pré-visualização
+              </button>
             </Link>
           </div>
         </div>
@@ -153,16 +156,19 @@ const RenderPost = ({ post, redirect, preview }) => {
       <div className={blogStyles.post}>
         <h1>{post.Page || ''}</h1>
         {post.Authors.length > 0 && (
-          <div className="authors">By: {post.Authors.join(' ')}</div>
+          <div className="authors">Autor: {post.Authors.join(' ')}</div>
         )}
         {post.Date && (
-          <div className="posted">Posted: {getDateStr(post.Date)}</div>
+          <div className="posted">Publicado em: {getDateStr(post.Date)}</div>
         )}
 
         <hr />
 
         {(!post.content || post.content.length === 0) && (
-          <p>This post has no content</p>
+          <p>
+            Esta publicação ainda está em desenvolvimento. Volte em breve ou
+            entre em contato comigo para solicitar algum conteúdo específico.
+          </p>
         )}
 
         {(post.content || []).map((block, blockIdx) => {

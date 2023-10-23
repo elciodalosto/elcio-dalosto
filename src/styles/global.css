@@ -26,6 +26,7 @@
 
 html,
 body {
+  overflow: scroll;
   padding: 0;
   margin: 0;
   font-size: 20px;
@@ -250,13 +251,14 @@ figure {
   font-size: 0.85rem;
   color: #999;
 }
-
-a {
-  color: #0070f3;
+a:hover {
+  color: darkorange;
+}
+li a {
   text-decoration: none;
 }
-a:hover {
-  color: #3291ff;
+li a:hover {
+  color: darkorange;
 }
 
 .links {
@@ -279,14 +281,12 @@ mark {
 
 h1 {
   margin: var(--gap-double) 0 calc(0.5 * var(--gap)) 0;
-  font-size: 2.25rem;
-  font-weight: 800;
   letter-spacing: -0.05rem;
 }
 
 h2 {
   font-weight: 300;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   letter-spacing: -0.02rem;
   color: var(--accents-3);
 }
@@ -373,4 +373,12 @@ footer span:nth-child(3) {
 
 footer span:nth-child(3) a {
   color: inherit;
+}
+td,
+tr,
+th {
+  border: 1px solid silver;
+}
+.topico-lista {
+  list-style: none;
 }

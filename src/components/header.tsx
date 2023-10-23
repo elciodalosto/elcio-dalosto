@@ -1,17 +1,16 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import ExtLink from './ext-link'
 import { useRouter } from 'next/router'
 import styles from '../styles/header.module.css'
+import navbarStyles from '../styles/navbar.module.css'
+import ExtLink from './ext-link'
 
 const navItems: { label: string; page?: string; link?: string }[] = [
-  { label: 'Home', page: '/' },
-  { label: 'Blog', page: '/blog' },
-  { label: 'Contact', page: '/contact' },
-  { label: 'Source Code', link: 'https://github.com/ijjk/notion-blog' },
+  { label: 'HOME', page: '/' },
+  { label: 'ABOUT', page: '/about' },
+  { label: 'PORTFOLIO', page: '/portfolio' },
+  { label: 'BLOG', page: '/blog' },
 ]
-
-const ogImageUrl = 'https://notion-blog.now.sh/og-image.png'
 
 const Header = ({ titlePre = '' }) => {
   const { pathname } = useRouter()
@@ -19,20 +18,13 @@ const Header = ({ titlePre = '' }) => {
   return (
     <header className={styles.header}>
       <Head>
-        <title>{titlePre ? `${titlePre} |` : ''} My Notion Blog</title>
-        <meta
-          name="description"
-          content="An example Next.js site using Notion for the blog"
-        />
-        <meta name="og:title" content="My Notion Blog" />
-        <meta property="og:image" content={ogImageUrl} />
-        <meta name="twitter:site" content="@_ijjk" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={ogImageUrl} />
+        <title>{titlePre ? `${titlePre} |` : ''} Elcio Augusto Dalosto</title>
+        <meta name="description" content="Site + Blog + Portfolio" />
+        <meta name="og:title" content="Elcio Augusto Dalosto" />
       </Head>
       <ul>
         {navItems.map(({ label, page, link }) => (
-          <li key={label}>
+          <li className={navbarStyles.unselectable} key={label}>
             {page ? (
               <Link href={page}>
                 <a className={pathname === page ? 'active' : undefined}>

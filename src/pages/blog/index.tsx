@@ -47,58 +47,66 @@ export async function getStaticProps({ preview }) {
   }
 }
 
-const Index = ({ posts = [], preview }) => {
+const Blog = ({ posts = [], preview }) => {
   return (
     <>
       <Header titlePre="Blog" />
-      {preview && (
-        <div className={blogStyles.previewAlertContainer}>
-          <div className={blogStyles.previewAlert}>
-            <b>Note:</b>
-            {` `}Viewing in preview mode{' '}
-            <Link href={`/api/clear-preview`}>
-              <button className={blogStyles.escapePreview}>Exit Preview</button>
-            </Link>
-          </div>
-        </div>
-      )}
-      <div className={`${sharedStyles.layout} ${blogStyles.blogIndex}`}>
-        <h1>My Notion Blog</h1>
-        {posts.length === 0 && (
-          <p className={blogStyles.noPosts}>There are no posts yet</p>
-        )}
-        {posts.map((post) => {
-          return (
-            <div className={blogStyles.postPreview} key={post.Slug}>
-              <h3>
-                <span className={blogStyles.titleContainer}>
-                  {!post.Published && (
-                    <span className={blogStyles.draftBadge}>Draft</span>
-                  )}
-                  <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                    <a>{post.Page}</a>
-                  </Link>
-                </span>
-              </h3>
-              {post.Authors.length > 0 && (
-                <div className="authors">By: {post.Authors.join(' ')}</div>
-              )}
-              {post.Date && (
-                <div className="posted">Posted: {getDateStr(post.Date)}</div>
-              )}
-              <p>
-                {(!post.preview || post.preview.length === 0) &&
-                  'No preview available'}
-                {(post.preview || []).map((block, idx) =>
-                  textBlock(block, true, `${post.Slug}${idx}`)
-                )}
-              </p>
+      <div className={sharedStyles.layout}>
+        <h1>Publicações recentes</h1>
+        {preview && (
+          <div className={blogStyles.previewAlertContainer}>
+            <div className={blogStyles.previewAlert}>
+              <b>Nota:</b>
+              {` `}Visualizando em modo Rascunho{' '}
+              <Link href={`/api/clear-preview`}>
+                <button className={blogStyles.escapePreview}>
+                  Sair da pré-visualização
+                </button>
+              </Link>
             </div>
-          )
-        })}
+          </div>
+        )}
+        <div className={`${sharedStyles.layout}`}>
+          {posts.length === 0 && (
+            <p className={blogStyles.noPosts}>
+              Não há publicações a exibir por aqui
+            </p>
+          )}
+          {posts.map((post) => {
+            return (
+              <div className={blogStyles.postPreview} key={post.Slug}>
+                <h3>
+                  <span className={blogStyles.titleContainer}>
+                    {!post.Published && (
+                      <span className={blogStyles.draftBadge}>Rascunho</span>
+                    )}
+                    <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
+                      <a>{post.Page}</a>
+                    </Link>
+                  </span>
+                </h3>
+                {post.Authors.length > 0 && (
+                  <div className="authors">Autor: {post.Authors.join(' ')}</div>
+                )}
+                {post.Date && (
+                  <div className="posted">
+                    Postado em: {getDateStr(post.Date)}
+                  </div>
+                )}
+                <p>
+                  {(!post.preview || post.preview.length === 0) &&
+                    'Publicação sem pré-visualização'}
+                  {(post.preview || []).map((block, idx) =>
+                    textBlock(block, true, `${post.Slug}${idx}`)
+                  )}
+                </p>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </>
   )
 }
 
-export default Index
+export default Blog
