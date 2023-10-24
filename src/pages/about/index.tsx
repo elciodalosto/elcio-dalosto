@@ -7,14 +7,15 @@ export default function About() {
       <Header titlePre="Sobre" />
       <div className={sharedStyles.layout}>
         <h1>Sobre</h1>
-        <h2>Aqui você encontra um resumo do meu currículo</h2>
         <div className="explanation">
+          <h2>Aqui você encontra um resumo do meu currículo</h2>
+
           <ul>
             <h3>Informações pessoais</h3>
             <li>Nome: Elcio Augusto Dalosto</li>
             <li>Idade: 36 anos</li>
             <hr />
-            <li>🏠 Residência em Taquara - Rio Grande do Sul, onde mora:</li>
+            <li>🏠 Residência em Taquara - Rio Grande do Sul, onde vivem:</li>
             <li className="topico-lista">🙆🏻‍♂️ Eu</li>
             <li className="topico-lista">🙆🏻‍♀️ Graziela (minha companheira)</li>
             <li className="topico-lista">🐶 Peteca (nossa dog)</li>

@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Header titlePre="Home" />
       <div className={sharedStyles.layout}>
-        <h1>Seja muito bem vindo!</h1>
+        <h1>Bem vindo!</h1>
 
         <div className="explanation">
           <p>

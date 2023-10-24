@@ -86,20 +86,15 @@ const Blog = ({ posts = [], preview }) => {
                   </span>
                 </h3>
                 {post.Authors.length > 0 && (
-                  <div className="authors">Autor: {post.Authors.join(' ')}</div>
+                  <div className={blogStyles.postAuthor}>
+                    Autor: {post.Authors.join(' ')}
+                  </div>
                 )}
                 {post.Date && (
                   <div className="posted">
-                    Postado em: {getDateStr(post.Date)}
+                    Publicado em: {getDateStr(post.Date)}
                   </div>
                 )}
-                <p>
-                  {(!post.preview || post.preview.length === 0) &&
-                    'Publicação sem pré-visualização'}
-                  {(post.preview || []).map((block, idx) =>
-                    textBlock(block, true, `${post.Slug}${idx}`)
-                  )}
-                </p>
               </div>
             )
           })}
