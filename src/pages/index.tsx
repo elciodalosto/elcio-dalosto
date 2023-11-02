@@ -1,14 +1,13 @@
 import Header from '../components/header'
-import sharedStyles from '../styles/shared.module.css'
 
 export default function Home() {
   return (
     <>
       <Header titlePre="Home" />
-      <div className={sharedStyles.layout}>
+      <div>
         <h1>Bem vindo!</h1>
 
-        <div className="explanation">
+        <div>
           <p>
             Meu nome é Elcio Augusto Dalosto e você está no meu espaço virtual.
           </p>

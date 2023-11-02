@@ -1,9 +1,6 @@
 import Link from 'next/link'
 import Header from '../../components/header'
 
-import blogStyles from '../../styles/blog.module.css'
-import sharedStyles from '../../styles/shared.module.css'
-
 import {
   getBlogLink,
   getDateStr,
@@ -51,50 +48,36 @@ const Blog = ({ posts = [], preview }) => {
   return (
     <>
       <Header titlePre="Blog" />
-      <div className={sharedStyles.layout}>
+      <div>
         <h1>Publicações recentes</h1>
         {preview && (
-          <div className={blogStyles.previewAlertContainer}>
-            <div className={blogStyles.previewAlert}>
+          <div>
+            <div>
               <b>Nota:</b>
               {` `}Visualizando em modo Rascunho{' '}
               <Link href={`/api/clear-preview`}>
-                <button className={blogStyles.escapePreview}>
-                  Sair da pré-visualização
-                </button>
+                <button>Sair da pré-visualização</button>
               </Link>
             </div>
           </div>
         )}
-        <div className={`${sharedStyles.layout}`}>
-          {posts.length === 0 && (
-            <p className={blogStyles.noPosts}>
-              Não há publicações a exibir por aqui
-            </p>
-          )}
+        <div>
+          {posts.length === 0 && <p>Não há publicações a exibir por aqui</p>}
           {posts.map((post) => {
             return (
-              <div className={blogStyles.postPreview} key={post.Slug}>
+              <div key={post.Slug}>
                 <h3>
-                  <span className={blogStyles.titleContainer}>
-                    {!post.Published && (
-                      <span className={blogStyles.draftBadge}>Rascunho</span>
-                    )}
+                  <span>
+                    {!post.Published && <span>Rascunho</span>}
                     <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
                       <a>{post.Page}</a>
                     </Link>
                   </span>
                 </h3>
                 {post.Authors.length > 0 && (
-                  <div className={blogStyles.postAuthor}>
-                    Autor: {post.Authors.join(' ')}
-                  </div>
+                  <div>Autor: {post.Authors.join(' ')}</div>
                 )}
-                {post.Date && (
-                  <div className="posted">
-                    Publicado em: {getDateStr(post.Date)}
-                  </div>
-                )}
+                {post.Date && <div>Publicado em: {getDateStr(post.Date)}</div>}
               </div>
             )
           })}

@@ -1,17 +1,16 @@
 import Link from 'next/link'
-import fetch from 'node-fetch'
 import { useRouter } from 'next/router'
 import Header from '../../components/header'
 import Heading from '../../components/heading'
 import components from '../../components/dynamic'
 import ReactJSXParser from '@zeit/react-jsx-parser'
-import blogStyles from '../../styles/blog.module.css'
 import { textBlock } from '../../lib/notion/renderers'
 import getPageData from '../../lib/notion/getPageData'
-import React, { CSSProperties, useEffect } from 'react'
+import React, { CSSProperties } from 'react'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
+import ToTop from '../../components/totop'
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -85,7 +84,7 @@ const RenderPost = ({ post, redirect, preview }) => {
   // loading one from fallback then  redirect back to the index
   if (!post) {
     return (
-      <div className={blogStyles.post}>
+      <div>
         <p>
           Opa! Alguma treta aconteceu e não encontrei a publicação. Estou te
           redirecionando para o índice do blog
@@ -98,19 +97,17 @@ const RenderPost = ({ post, redirect, preview }) => {
     <>
       <Header titlePre={post.Page} />
       {preview && (
-        <div className={blogStyles.previewAlertContainer}>
-          <div className={blogStyles.previewAlert}>
+        <div>
+          <div>
             <b>Nota:</b>
             {` `}Modo de pré-visualização{' '}
             <Link href={`/api/clear-preview?slug=${post.Slug}`}>
-              <button className={blogStyles.escapePreview}>
-                Sair da pré-visualização
-              </button>
+              <button>Sair da pré-visualização</button>
             </Link>
           </div>
         </div>
       )}
-      <div className={blogStyles.post}>
+      <div>
         <h1>{post.Page || ''}</h1>
         {post.Authors.length > 0 && (
           <div className="authors">Autor: {post.Authors.join(' ')}</div>
@@ -192,43 +189,23 @@ const RenderPost = ({ post, redirect, preview }) => {
           const renderBookmark = ({ link, title, description, format }) => {
             const { bookmark_icon: icon, bookmark_cover: cover } = format
             toRender.push(
-              <div className={blogStyles.bookmark}>
+              <div>
                 <div>
-                  <div style={{ display: 'flex' }}>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={blogStyles.bookmarkContentsWrapper}
-                      href={link}
-                    >
-                      <div
-                        role="button"
-                        className={blogStyles.bookmarkContents}
-                      >
-                        <div className={blogStyles.bookmarkInfo}>
-                          <div className={blogStyles.bookmarkTitle}>
-                            {title}
-                          </div>
-                          <div className={blogStyles.bookmarkDescription}>
-                            {description}
-                          </div>
-                          <div className={blogStyles.bookmarkLinkWrapper}>
-                            <img
-                              src={icon}
-                              className={blogStyles.bookmarkLinkIcon}
-                            />
-                            <div className={blogStyles.bookmarkLink}>
-                              {link}
-                            </div>
+                  <div>
+                    <a target="_blank" rel="noopener noreferrer" href={link}>
+                      <div role="button">
+                        <div>
+                          <div>{title}</div>
+                          <div>{description}</div>
+                          <div>
+                            <img src={icon} />
+                            <div>{link}</div>
                           </div>
                         </div>
-                        <div className={blogStyles.bookmarkCoverWrapper1}>
-                          <div className={blogStyles.bookmarkCoverWrapper2}>
-                            <div className={blogStyles.bookmarkCoverWrapper3}>
-                              <img
-                                src={cover}
-                                className={blogStyles.bookmarkCover}
-                              />
+                        <div>
+                          <div>
+                            <div>
+                              <img src={cover} />
                             </div>
                           </div>
                         </div>
@@ -404,17 +381,6 @@ const RenderPost = ({ post, redirect, preview }) => {
               )
               break
             }
-            case 'tweet': {
-              if (properties.html) {
-                toRender.push(
-                  <div
-                    dangerouslySetInnerHTML={{ __html: properties.html }}
-                    key={id}
-                  />
-                )
-              }
-              break
-            }
             case 'equation': {
               if (properties && properties.title) {
                 const content = properties.title[0][0]
@@ -438,6 +404,7 @@ const RenderPost = ({ post, redirect, preview }) => {
           return toRender
         })}
       </div>
+      <ToTop />
     </>
   )
 }

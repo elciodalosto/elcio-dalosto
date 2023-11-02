@@ -1,7 +1,6 @@
 import GitHub from './svgs/github'
 import Envelope from './svgs/envelope'
 import LinkedIn from './svgs/linkedin'
-import contactStyles from '../styles/contact.module.css'
 import ExtLink from './ext-link'
 
 const contacts = [
@@ -25,7 +24,7 @@ export default function Footer() {
   return (
     <>
       <footer>
-        <div className={contactStyles.links}>
+        <div>
           <hr />
           <br />
 

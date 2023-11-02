@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import styles from '../styles/header.module.css'
-import navbarStyles from '../styles/navbar.module.css'
 import ExtLink from './ext-link'
 
 const navItems: { label: string; page?: string; link?: string }[] = [
@@ -16,15 +14,16 @@ const Header = ({ titlePre = '' }) => {
   const { pathname } = useRouter()
 
   return (
-    <header className={styles.header}>
+    <header>
       <Head>
         <title>{titlePre ? `${titlePre} |` : ''} Elcio Augusto Dalosto</title>
         <meta name="description" content="Site + Blog + Portfolio" />
         <meta name="og:title" content="Elcio Augusto Dalosto" />
       </Head>
-      <ul>
+      <ul className="unordered-list">
+        <span id="recolher-menu">◀◀ Recolher menu</span>
         {navItems.map(({ label, page, link }) => (
-          <li className={navbarStyles.unselectable} key={label}>
+          <li className="list-items" key={label}>
             {page ? (
               <Link href={page}>
                 <a className={pathname === page ? 'active' : undefined}>

@@ -1,35 +1,37 @@
 import Header from '../../components/header'
-import sharedStyles from '../../styles/shared.module.css'
 
 export default function About() {
   return (
     <>
       <Header titlePre="Sobre" />
-      <div className={sharedStyles.layout}>
+      <div>
         <h1>Sobre</h1>
-        <div className="explanation">
+        <div>
           <h2>Aqui você encontra um resumo do meu currículo</h2>
 
           <ul>
-            <h3>Informações pessoais</h3>
-            <li>Nome: Elcio Augusto Dalosto</li>
-            <li>Idade: 36 anos</li>
-            <hr />
-            <li>🏠 Residência em Taquara - Rio Grande do Sul, onde vivem:</li>
-            <li className="topico-lista">🙆🏻‍♂️ Eu</li>
-            <li className="topico-lista">🙆🏻‍♀️ Graziela (minha companheira)</li>
-            <li className="topico-lista">🐶 Peteca (nossa dog)</li>
-            <hr />
-            <li>Práticas/Esportes/Hobbies/Lazer:</li>
-            <li className="topico-lista">🧘‍♂️ Yoga (Hatha) </li>
-            <li className="topico-lista">🛹 Skateboarding </li>
-            <li className="topico-lista">🎮 Games </li>
-            <li className="topico-lista">👨‍💻 Estudos </li>
-            <li className="topico-lista">🛫 Viajar </li>
-            <li className="topico-lista">👽 Viajar </li>
-            <li className="topico-lista">
-              🌱 Plantar e/ou Guardar as sementes de quase tudo o que eu consumo
-            </li>
+            <div id="informacoes-gerais">
+              <h3>Informações pessoais</h3>
+              <li>Nome: Elcio Augusto Dalosto</li>
+              <li>Idade: 36 anos</li>
+              <hr />
+              <li>🏠 Residência em Taquara - Rio Grande do Sul, onde vivem:</li>
+              <li className="topico-lista">🙆🏻‍♂️ Eu</li>
+              <li className="topico-lista">🙆🏻‍♀️ Graziela (minha companheira)</li>
+              <li className="topico-lista">🐶 Peteca (nossa dog)</li>
+              <hr />
+              <li>Práticas/Esportes/Hobbies/Lazer:</li>
+              <li className="topico-lista">🧘‍♂️ Yoga (Hatha) </li>
+              <li className="topico-lista">🛹 Skateboarding </li>
+              <li className="topico-lista">🎮 Games </li>
+              <li className="topico-lista">👨‍💻 Estudos </li>
+              <li className="topico-lista">🛫 Viajar </li>
+              <li className="topico-lista">👽 Viajar </li>
+              <li className="topico-lista">
+                🌱 Plantar e/ou Guardar as sementes de quase tudo o que eu
+                consumo
+              </li>
+            </div>
 
             <hr />
             <h3>Informações de trabalho e acadêmicas</h3>

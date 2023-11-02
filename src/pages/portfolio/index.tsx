@@ -1,13 +1,12 @@
 import Header from '../../components/header'
-import sharedStyles from '../../styles/shared.module.css'
 
 export default function Portfolio() {
   return (
     <>
       <Header titlePre="Portfolio" />
-      <div className={sharedStyles.layout}>
+      <div>
         <h1>Portfolio</h1>
-        <div className="explanation">
+        <div>
           <h2>[ Em construção ]</h2>
         </div>
       </div>
