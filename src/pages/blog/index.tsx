@@ -53,6 +53,9 @@ const Blog = ({ posts = [], preview }) => {
       <Header titlePre="Blog" />
       <div className={sharedStyles.layout}>
         <h1>Publicações recentes</h1>
+        <div className="explanation">
+          <h2> Aqui você encontra minhas publicações, ideias e opiniões.</h2>
+        </div>
         {preview && (
           <div className={blogStyles.previewAlertContainer}>
             <div className={blogStyles.previewAlert}>
@@ -91,10 +94,11 @@ const Blog = ({ posts = [], preview }) => {
                   </div>
                 )}
                 {post.Date && (
-                  <div className="posted">
+                  <div className={blogStyles.published}>
                     Publicado em: {getDateStr(post.Date)}
                   </div>
                 )}
+                <hr />
               </div>
             )
           })}
