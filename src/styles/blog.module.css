@@ -35,12 +35,6 @@
   cursor: pointer;
 }
 
-.titleContainer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: clamp(0.5em, 0.5em + 1vw, 2em);
-}
 .draftBadge {
   border-radius: 16px;
   background-color: black;
@@ -58,50 +52,41 @@
 .postPreview {
   max-width: 600px;
   margin: 10px auto;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .postPreview:last-child {
   border-bottom: none;
 }
 
-.postPreview h3,
-.post h1 {
-  text-align: center;
-  font-size: clamp(0.5em, 1em + 1vw, 1.2em);
-  margin-bottom: 0;
-}
 @media (max-width: 600px) {
   .post h1 {
     text-align: center;
     padding-left: 1%;
     padding-right: 1%;
-    font-size: clamp(0.6em, 1em + 1vw, 2em);
+    font-size: clamp(1em, 1em + 1vw, 1em);
     margin-bottom: 0;
   }
   .post {
     padding: 7%;
   }
-  .postPreview h3 {
-    text-align: center;
-    padding-left: 0.5%;
-    padding-right: 0.5%;
-    font-size: clamp(0.5em, 1.2em + 1vw, 2em);
+  .postPreview {
+    font-size: 0.7em;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 
 .postAuthor {
-  padding-left: 5%;
-  padding-right: 5%;
-  font-size: clamp(0.2em, 0.6em + 1vw, 2em);
-}
-.post :global(h2),
-.post :global(h3) {
-  margin: 3rem 0 1.5rem 0;
+  font-size: 0.8em;
+  color: var(--accents-2);
 }
 
-.post :global(video),
-.post :global(img),
+.published {
+  font-size: 0.8em;
+}
+
 .post :global(.asset-wrapper) {
   margin: 2rem auto;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
@@ -126,11 +111,6 @@
 
 .post :global(.underline) {
   text-decoration: underline;
-}
-
-.postPreview :global(.posted) {
-  padding-left: 5%;
-  padding-right: 5%;
 }
 
 .post {

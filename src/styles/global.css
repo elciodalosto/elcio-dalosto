@@ -18,6 +18,12 @@
     sans-serif;
   --font-mono: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 * {
@@ -267,10 +273,6 @@ mark {
   padding: var(--gap-quarter);
   border-radius: var(--radius);
   background: rgba(247, 212, 255, 0.8);
-}
-
-.title {
-  text-align: center;
 }
 
 .logo :global(svg) {
