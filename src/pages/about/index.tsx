@@ -14,24 +14,7 @@ export default function About() {
             <h3>Informações pessoais</h3>
             <li>Nome: Elcio Augusto Dalosto</li>
             <li>Idade: 36 anos</li>
-            <hr />
-            <li>🏠 Residência em Taquara - Rio Grande do Sul, onde vivem:</li>
-            <li className="topico-lista">🙆🏻‍♂️ Eu</li>
-            <li className="topico-lista">🙆🏻‍♀️ Graziela (minha companheira)</li>
-            <li className="topico-lista">🐶 Peteca (nossa dog)</li>
-            <hr />
-            <li>Práticas/Esportes/Hobbies/Lazer:</li>
-            <li className="topico-lista">🧘‍♂️ Yoga (Hatha) </li>
-            <li className="topico-lista">🛹 Skateboarding </li>
-            <li className="topico-lista">🎮 Games </li>
-            <li className="topico-lista">👨‍💻 Estudos </li>
-            <li className="topico-lista">🛫 Viajar </li>
-            <li className="topico-lista">👽 Viajar </li>
-            <li className="topico-lista">
-              🌱 Plantar e/ou Guardar as sementes de quase tudo o que eu consumo
-            </li>
 
-            <hr />
             <h3>Informações de trabalho e acadêmicas</h3>
             <li>Profissão: Testador de Software | QA</li>
             <li>Colaborador na: CWI Software | São Leopoldo/RS(remoto)</li>
@@ -48,6 +31,14 @@ export default function About() {
               (BSTQB/ISTQB) | e estudando para evoluir a certificação atual para
               CTAL - Certified Tester Advanced Level.
             </li>
+            <h3 className="text-center">Interesses</h3>
+            <li className="topico-lista">🧘‍♂️ Yoga (Hatha) </li>
+            <li className="topico-lista">🛹 Skateboarding </li>
+            <li className="topico-lista">🎮 Games </li>
+            <li className="topico-lista">👨‍💻 Estudos de tecnologia </li>
+            <li className="topico-lista">🧙‍♂️ Estudos espirituais </li>
+            <li className="topico-lista">🛫 Viajar </li>
+            <li className="topico-lista">🚗 Passear </li>
           </ul>
         </div>
       </div>
