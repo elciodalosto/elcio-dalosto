@@ -1,5 +1,12 @@
+import Image from 'next/image'
 import Header from '../components/header'
 import sharedStyles from '../styles/shared.module.css'
+
+const imageLoader = ({ src, width, quality }) => {
+  return `https://avatars.githubusercontent.com/u/15917796?v=4${src}?w=${width}&q=${
+    quality || 75
+  }`
+}
 
 export default function Home() {
   return (
@@ -9,9 +16,22 @@ export default function Home() {
         <h1>Bem vindo!</h1>
 
         <div className="explanation">
-          <p>
+          <h2>
+            {' '}
             Meu nome é Elcio Augusto Dalosto e você está no meu espaço virtual.
-          </p>
+          </h2>
+
+          <div className={sharedStyles.avatar}>
+            <Image
+              className={sharedStyles.avatarCircular}
+              loader={imageLoader}
+              alt="fotografia do rosto"
+              width={256}
+              height={256}
+              src="/public/elcio-dalosto.jpg"
+            />
+          </div>
+
           <p>Sinta-se à vontade para explorar o site e me conhecer melhor.</p>
           <p>
             Desenvolvi este site com o objetivo de centralizar minhas
