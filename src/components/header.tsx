@@ -8,7 +8,7 @@ import ExtLink from './ext-link'
 const navItems: { label: string; page?: string; link?: string }[] = [
   { label: 'HOME', page: '/' },
   { label: 'ABOUT', page: '/about' },
-  { label: 'PORTFOLIO', page: '/portfolio' },
+  // { label: 'PORTFOLIO', page: '/portfolio' },
   { label: 'BLOG', page: '/blog' },
 ]
 
@@ -21,6 +21,10 @@ const Header = ({ titlePre = '' }) => {
         <title>{titlePre ? `${titlePre} |` : ''} Elcio Augusto Dalosto</title>
         <meta name="description" content="Site + Blog + Portfolio" />
         <meta name="og:title" content="Elcio Augusto Dalosto" />
+        <meta
+          property="og:image"
+          content="https://avatars.githubusercontent.com/u/15917796?v=4"
+        />
       </Head>
       <ul>
         {navItems.map(({ label, page, link }) => (
