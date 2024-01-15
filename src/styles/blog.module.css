@@ -78,6 +78,9 @@
   }
 }
 
+.postTitle {
+  color: royalblue;
+}
 .postAuthor {
   font-size: 0.8em;
   color: var(--accents-2);

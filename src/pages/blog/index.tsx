@@ -79,12 +79,12 @@ const Blog = ({ posts = [], preview }) => {
             return (
               <div className={blogStyles.postPreview} key={post.Slug}>
                 <h3>
-                  <span className={blogStyles.titleContainer}>
+                  <span>
                     {!post.Published && (
                       <span className={blogStyles.draftBadge}>Rascunho</span>
                     )}
                     <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                      <a>{post.Page}</a>
+                      <a className={blogStyles.postTitle}>{post.Page}</a>
                     </Link>
                   </span>
                 </h3>
