@@ -12,6 +12,7 @@ import {
 import { textBlock } from '../../lib/notion/renderers'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
+import animations from '../../styles/animations.module.css'
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
@@ -78,27 +79,39 @@ const Blog = ({ posts = [], preview }) => {
           {posts.map((post) => {
             return (
               <div className={blogStyles.postPreview} key={post.Slug}>
-                <h3>
-                  <span>
+                <fieldset
+                  className={[
+                    sharedStyles.fieldSetBorder,
+                    animations.websiteOpening,
+                  ].join(' ')}
+                >
+                  <legend>{post.Page.slice(0, 6)}</legend>
+                  <span className={blogStyles.postPreviewTitle}>
                     {!post.Published && (
                       <span className={blogStyles.draftBadge}>Rascunho</span>
                     )}
                     <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                      <a className={blogStyles.postTitle}>{post.Page}</a>
+                      <a className={blogStyles.postTitle}>
+                        {post.Page.slice(6)}
+                      </a>
                     </Link>
                   </span>
-                </h3>
-                {post.Authors.length > 0 && (
-                  <div className={blogStyles.postAuthor}>
-                    Autor: {post.Authors.join(' ')}
-                  </div>
-                )}
-                {post.Date && (
-                  <div className={blogStyles.published}>
-                    Publicado em: {getDateStr(post.Date)}
-                  </div>
-                )}
-                <hr />
+                  {post.Authors.length > 0 && (
+                    <div className={blogStyles.postAuthor}>
+                      Autor: {post.Authors.join(' ')}
+                    </div>
+                  )}
+                  {post.Date && (
+                    <div className={blogStyles.published}>
+                      Publicado em: {getDateStr(post.Date)}
+                    </div>
+                  )}
+                  {post.Update && (
+                    <div className={blogStyles.published}>
+                      Atualizado em: {getDateStr(post.Update)}
+                    </div>
+                  )}
+                </fieldset>
               </div>
             )
           })}

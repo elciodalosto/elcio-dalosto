@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import fetch from 'node-fetch'
 import { useRouter } from 'next/router'
 import Header from '../../components/header'
 import Heading from '../../components/heading'
@@ -111,12 +110,21 @@ const RenderPost = ({ post, redirect, preview }) => {
         </div>
       )}
       <div className={blogStyles.post}>
-        <h1>{post.Page || ''}</h1>
+        <h1>{post.Page.slice(6) || ''}</h1>
         {post.Authors.length > 0 && (
-          <div className="authors">Autor: {post.Authors.join(' ')}</div>
+          <div className={blogStyles.postAuthor}>
+            Autor: {post.Authors.join(' ')}
+          </div>
         )}
         {post.Date && (
-          <div className="posted">Publicado em: {getDateStr(post.Date)}</div>
+          <div className={blogStyles.published}>
+            Publicado em: {getDateStr(post.Date)}
+          </div>
+        )}
+        {post.Update && (
+          <div className={blogStyles.published}>
+            Atualizado em: {getDateStr(post.Update)}
+          </div>
         )}
 
         {(!post.content || post.content.length === 0) && (

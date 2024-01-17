@@ -26,9 +26,6 @@ export default function Footer() {
     <>
       <footer>
         <div className={contactStyles.links}>
-          <hr />
-          <br />
-
           {contacts.map(({ Comp, link, alt }) => {
             return (
               <ExtLink key={link} href={link} aria-label={alt}>
@@ -37,8 +34,7 @@ export default function Footer() {
             )
           })}
           <div>
-            <p>2023 | Elcio Augusto Dalosto</p>
-            <p>E-mail: edalosto@gmail.com</p>
+            <p>2023 - 2024 | Elcio Augusto Dalosto </p>
           </div>
         </div>
       </footer>

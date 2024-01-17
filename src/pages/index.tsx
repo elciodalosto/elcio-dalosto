@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Header from '../components/header'
 import sharedStyles from '../styles/shared.module.css'
+import animations from '../styles/animations.module.css'
 
 const imageLoader = ({ src, width, quality }) => {
   return `https://avatars.githubusercontent.com/u/15917796?v=4${src}?w=${width}&q=${
@@ -23,7 +24,7 @@ export default function Home() {
 
           <div className={sharedStyles.avatar}>
             <Image
-              className={sharedStyles.avatarCircular}
+              className={animations.avatarCircular}
               loader={imageLoader}
               alt="fotografia do rosto"
               width={256}

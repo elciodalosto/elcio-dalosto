@@ -286,7 +286,7 @@ h1 {
 
 h2 {
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   letter-spacing: -0.02rem;
   color: var(--accents-3);
 }
@@ -308,8 +308,8 @@ h2 {
 p {
   color: #555;
   font-weight: 400;
-  font-size: 0.94rem;
-  line-height: 1.7;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 pre {
   white-space: pre;
@@ -382,4 +382,8 @@ th {
 }
 .topico-lista {
   list-style: none;
+}
+
+ol li {
+  font-size: clamp(0.8em, 0.8em, 1em);
 }

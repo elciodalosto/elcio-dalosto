@@ -5,18 +5,16 @@
   height: auto;
 }
 
-.layout h1,
 .layout h2 {
-  font-size: clamp(1em, 1.3em, 3em);
   text-align: center;
+}
+.layout h1 {
+  text-align: center;
+  font-size: clamp(1em, 1em, 1em);
 }
 
 .avatar {
   align-items: center;
   text-align: center;
   align-content: center;
-}
-
-.avatarCircular {
-  border-radius: 50%;
 }
