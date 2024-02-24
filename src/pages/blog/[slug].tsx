@@ -110,7 +110,7 @@ const RenderPost = ({ post, redirect, preview }) => {
         </div>
       )}
       <div className={blogStyles.post}>
-        <h1>{post.Page.slice(6) || ''}</h1>
+        <h1>{post.Title || ''}</h1>
         {post.Authors.length > 0 && (
           <div className={blogStyles.postAuthor}>
             Autor: {post.Authors.join(' ')}

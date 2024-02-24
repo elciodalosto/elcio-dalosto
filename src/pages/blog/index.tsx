@@ -79,21 +79,18 @@ const Blog = ({ posts = [], preview }) => {
           {posts.map((post) => {
             return (
               <div className={blogStyles.postPreview} key={post.Slug}>
-                <fieldset
+                <section
                   className={[
-                    sharedStyles.fieldSetBorder,
+                    sharedStyles.postStyles,
                     animations.websiteOpening,
                   ].join(' ')}
                 >
-                  <legend>{post.Page.slice(0, 6)}</legend>
                   <span className={blogStyles.postPreviewTitle}>
                     {!post.Published && (
                       <span className={blogStyles.draftBadge}>Rascunho</span>
                     )}
                     <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                      <a className={blogStyles.postTitle}>
-                        {post.Page.slice(6)}
-                      </a>
+                      <a className={blogStyles.postTitle}>{post.Title}</a>
                     </Link>
                   </span>
                   {post.Authors.length > 0 && (
@@ -111,7 +108,7 @@ const Blog = ({ posts = [], preview }) => {
                       Atualizado em: {getDateStr(post.Update)}
                     </div>
                   )}
-                </fieldset>
+                </section>
               </div>
             )
           })}
