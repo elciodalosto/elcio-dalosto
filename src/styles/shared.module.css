@@ -20,7 +20,8 @@
 }
 
 .postStyles {
-  padding: 1.3em;
-  border-radius: 7px;
-  border: 5px outset;
+  padding-right: 25px;
+  padding-left: 25px;
+  font-size: 0.9em;
+  font-weight: bold;
 }

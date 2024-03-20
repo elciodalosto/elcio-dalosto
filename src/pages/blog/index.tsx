@@ -25,19 +25,10 @@ export async function getStaticProps({ preview }) {
       if (!preview && !postIsPublished(post)) {
         return null
       }
-      post.Authors = post.Authors || []
-      for (const author of post.Authors) {
-        authorsToGet.add(author)
-      }
+
       return post
     })
     .filter(Boolean)
-
-  const { users } = await getNotionUsers([...authorsToGet])
-
-  posts.map((post) => {
-    post.Authors = post.Authors.map((id) => users[id].full_name)
-  })
 
   return {
     props: {
@@ -85,29 +76,10 @@ const Blog = ({ posts = [], preview }) => {
                     animations.websiteOpening,
                   ].join(' ')}
                 >
-                  <span className={blogStyles.postPreviewTitle}>
-                    {!post.Published && (
-                      <span className={blogStyles.draftBadge}>Rascunho</span>
-                    )}
-                    <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                      <a className={blogStyles.postTitle}>{post.Title}</a>
-                    </Link>
-                  </span>
-                  {post.Authors.length > 0 && (
-                    <div className={blogStyles.postAuthor}>
-                      Autor: {post.Authors.join(' ')}
-                    </div>
-                  )}
-                  {post.Date && (
-                    <div className={blogStyles.published}>
-                      Publicado em: {getDateStr(post.Date)}
-                    </div>
-                  )}
-                  {post.Update && (
-                    <div className={blogStyles.published}>
-                      Atualizado em: {getDateStr(post.Update)}
-                    </div>
-                  )}
+                  <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
+                    <a className={blogStyles.postTitle}>{post.Title}</a>
+                  </Link>
+                  <hr />
                 </section>
               </div>
             )
