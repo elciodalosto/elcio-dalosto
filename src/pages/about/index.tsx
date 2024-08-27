@@ -13,7 +13,7 @@ export default function About() {
           <ul>
             <h3>Informações pessoais</h3>
             <li>Nome: Elcio Augusto Dalosto</li>
-            <li>Idade: 36 anos</li>
+            <li>Idade: 37 anos</li>
 
             <h3>Informações de trabalho e acadêmicas</h3>
             <li>Profissão: Testador de Software | QA</li>
@@ -32,13 +32,13 @@ export default function About() {
               CTAL - Certified Tester Advanced Level.
             </li>
             <h3 className="text-center">Interesses</h3>
-            <li className="topico-lista">🧘‍♂️ Yoga (Hatha) </li>
             <li className="topico-lista">🛹 Skateboarding </li>
-            <li className="topico-lista">🎮 Games </li>
+            <li className="topico-lista">🧘‍♂️ Yoga </li>
             <li className="topico-lista">👨‍💻 Estudos de tecnologia </li>
             <li className="topico-lista">🧙‍♂️ Estudos espirituais </li>
             <li className="topico-lista">🛫 Viajar </li>
             <li className="topico-lista">🚗 Passear </li>
+            <li className="topico-lista">🎮 Games </li>
           </ul>
         </div>
       </div>
