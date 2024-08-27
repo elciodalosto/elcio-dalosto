@@ -9,7 +9,7 @@ const navItems: { label: string; page?: string; link?: string }[] = [
   { label: 'HOME', page: '/' },
   { label: 'ABOUT', page: '/about' },
   // { label: 'PORTFOLIO', page: '/portfolio' },
-  { label: 'BLOG', page: '/blog' },
+  // { label: 'BLOG', page: '/blog' },
 ]
 
 const Header = ({ titlePre = '' }) => {
