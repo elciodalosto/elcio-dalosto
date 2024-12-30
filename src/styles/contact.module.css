@@ -1,37 +1,37 @@
 .links {
-  display: block;
+  /* display: block;
   margin: 1rem auto;
   max-width: 500px;
-  text-align: center;
+  text-align: center; */
 }
 
 .links a {
-  width: 48px;
+  /* width: 48px;
   height: 48px;
   margin: 0 10px;
   display: inline-block;
-  transition: opacity 200ms ease;
+  transition: opacity 200ms ease; */
 }
 
 .links a:hover {
-  opacity: 0.6;
-  fill: darkorange;
+  /* opacity: 0.6;
+  fill: darkorange; */
 }
 
 .avatar {
-  display: block;
+  /* display: block;
   text-align: center;
-  margin: 1rem 0;
+  margin: 1rem 0; */
 }
 
 .avatar img {
-  height: 120px;
+  /* height: 120px; */
 }
 
 .name {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .name a {
-  color: inherit;
+  /* color: inherit; */
 }
