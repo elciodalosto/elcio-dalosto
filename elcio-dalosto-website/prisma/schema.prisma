@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  email     String   @unique
+  name      String?
+  posts     Post[]
+  personal_info String
+  contact_info String
+  address_info String
+  profession_info String
+}
+
+model Profile {
+  id        Int      @id @default(autoincrement())
+  name String
+  sport String
+  modality String
+  base String
+  practice_time String
+}
+
+model Address {
+  id        Int      @id @default(autoincrement())
+  country String
+  state String
+  city String
+  postal_code String
+  district String
+  street String
+  number String
+}
+
+model Contact {
+  id        Int      @id @default(autoincrement())
+  phone String
+  email String
+  website String
+}
+
+model PersonalInfo {
+  id        Int      @id @default(autoincrement())
+  birth DateTime
+  age Int
+  profession String
+}
+
+model Trick {
+  id        Int      @id @default(autoincrement())
+  name String
+  type String
+  description String
+  difficulty String
+  binds_in String
+  mix String
+  binds_out String
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  published Boolean  @default(false)
+  title     String
+  author    User?    @relation(fields: [authorId], references: [id])
+  authorId  Int?
+}
