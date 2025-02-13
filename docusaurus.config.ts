@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
+  title: 'elcio-dalosto',
   tagline: 'Tecnologia como o meio - não o fim.',
   favicon: 'img/favicon.ico',
 
@@ -49,7 +49,7 @@ const config: Config = {
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: './src/styles-custom-common/custom.css',
         },
       } satisfies Preset.Options,
     ],
@@ -59,10 +59,15 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/logo.png',
     navbar: {
-      title: 'HOME',
+      title: 'elcio-dalosto',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.png',
+        href: '/',
+        target: '_self',
+        style: {
+          scale: '1.3'
+        },
       },
       items: [
         {
@@ -71,11 +76,21 @@ const config: Config = {
           position: 'left',
           label: 'MENU',
         },
-        // {
-        //   to: '/blog',
-        //   label: 'BLOG',
-        //   position: 'left'
-        // },
+        {
+          to: '/timeline',
+          label: 'TIMELINE',
+          position: 'left'
+        },
+        {
+          to: '/about',
+          label: 'ABOUT',
+          position: 'left'
+        },
+        {
+          to: '/blog/welcome',
+          label: 'BLOG',
+          position: 'left'
+        },
       ],
     },
     footer: {
@@ -97,23 +112,42 @@ const config: Config = {
           ],
         },
         {
+          title: 'Timeline',
+          items: [
+            {
+              label: 'Formações',
+              to: '/timeline/#formations',
+            },
+            {
+              label: 'Experiências',
+              to: '/timeline/#experiences',
+            },
+          ],
+        },
+        {
           title: 'Social',
           items: [
             {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/in/elciodalosto/',
+              au: 'img/linkedin.png',
             },
             {
               label: 'GitHub',
               href: 'https://github.com/elciodalosto',
+              socials: {
+                github: 'elciodalosto',
+              },
             },
             {
               label: 'Youtube',
               href: 'https://youtube.com/@elciodalosto',
+              icon: 'img/youtube.png',
             },
             {
               label: 'Instagram',
               href: 'https://www.instagram.com/elcio.dalosto/',
+              icon: 'img/instagram.png',
             },
           ],
         },
@@ -122,7 +156,7 @@ const config: Config = {
       ],
       copyright: `Copyright © from 2025 to ${new Date().getFullYear()} - Elcio Augusto Dalosto.`,
     },
-  prism: {
+    prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
