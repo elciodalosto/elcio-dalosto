@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# TERMOS DE USO
+# Termos de uso
 ** em construção **

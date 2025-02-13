@@ -2,6 +2,6 @@
 sidebar_position: 1
 ---
 
-# POLÍTICA DE PRIVACIDADE
+# Política de privacidade
 
 ** em construção **
