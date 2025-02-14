@@ -1,0 +1,106 @@
+:root {
+  --avatar-size: 25%;
+}
+
+.title {
+  font-size: 1.7em;
+}
+
+.avatar {
+  height: auto;
+  width: var(--avatar-size);
+  border-radius: 0 50% 50% 50%;
+  border: 5px solid var(--border-primary-color);
+  padding: 1.5em;
+  position: relative;
+  /* box-shadow:
+    0 0 15px var(--text-primary-color),
+    inset 0 0 5px var(--text-primary-color),
+    inset 0 0 15px var(--text-primary-color),
+    inset 0 0 25px var(--text-primary-color); */
+  overflow: hidden;
+  animation: animAvatarMirror 12s linear infinite;
+}
+
+@keyframes animAvatarMirror {
+  0% {
+    border-color: red;
+    box-shadow:
+    0 0 15px red,
+    inset 0 0 5px red,
+    inset 0 0 15px red,
+    inset 0 0 25px red;
+  }
+
+  12.5% {
+    border-color: orange;
+    box-shadow:
+    0 0 15px orange,
+    inset 0 0 5px orange,
+    inset 0 0 15px orange,
+    inset 0 0 25px orange;
+  }
+
+  25% {
+    border-color: yellow;
+    box-shadow:
+    0 0 15px yellow,
+    inset 0 0 5px yellow,
+    inset 0 0 15px yellow,
+    inset 0 0 25px yellow;
+  }
+
+  37.5% {
+    border-color: green;
+    box-shadow:
+    0 0 15px green,
+    inset 0 0 5px green,
+    inset 0 0 15px green,
+    inset 0 0 25px green;
+  }
+  
+  50% {
+    border-color: cyan;
+    box-shadow:
+    0 0 15px cyan,
+    inset 0 0 5px cyan,
+    inset 0 0 15px cyan,
+    inset 0 0 25px cyan;
+  }
+
+  62.5% {
+    border-color: blue;
+    box-shadow:
+    0 0 15px blue,
+    inset 0 0 5px blue,
+    inset 0 0 15px blue,
+    inset 0 0 25px blue;
+  }
+
+  75% {
+    border-color: purple;
+    box-shadow:
+    0 0 15px purple,
+    inset 0 0 5px purple,
+    inset 0 0 15px purple,
+    inset 0 0 25px purple;
+  }
+
+  87.5% {
+    border-color: violet;
+    box-shadow:
+    0 0 15px violet,
+    inset 0 0 5px violet,
+    inset 0 0 15px violet,
+    inset 0 0 25px violet;
+  }
+
+  100% {
+    border-color: red;
+    box-shadow:
+    0 0 15px red,
+    inset 0 0 5px red,
+    inset 0 0 15px red,
+    inset 0 0 25px red;
+  }
+}

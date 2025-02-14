@@ -1,0 +1,166 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  /* box-shadow:
+  0 0 15px var(--bg-primary-color),
+  inset 0 0 5px var(--bg-primary-color),
+  inset 0 0 15px var(--bg-primary-color),
+  inset 0 0 25px var(--bg-primary-color); */
+  background: linear-gradient(45deg, var(--bg-primary-color), var(--bg-secondary-color));
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  /* overflow-x: hidden; */
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='light'] {
+  --text-primary-color: royalblue;
+  --bg-primary-color: #f5f6f7;
+  --bg-secondary-color: rgb(236, 240, 252);
+  --border-primary-color: royalblue;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --text-primary-color: #00c3ff;
+  --border-primary-color: #00c3ff;
+  --bg-primary-color: #1c1e21;
+  --bg-secondary-color: #888cd472;
+}
+
+
+/* oculta o botão de Scroll Up nativo do docusaurus */
+.theme-back-to-top-button {
+  display: none;
+}
+
+.main-wrapper {
+  overflow-y: none;
+  border: none;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  justify-content: center;
+  background-color: var(--bg-primary-color);
+}
+
+
+aside {
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--bg-secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: var(--bg-primary-color); */
+}
+
+.navbar__item {
+  border: 2px solid transparent;
+  border-radius: 50px;
+}
+
+.navbar__item:hover {
+  /* text-decoration: underline; */
+  border: 2px solid red;
+  animation: htsRainbow 3s linear infinite;
+
+}
+
+.DownToUp {
+  animation: htsRainbow 3s linear infinite;
+}
+
+li a:hover {
+  animation: htsRainbow 3s linear infinite;
+
+}
+
+@keyframes htsRainbow {
+  0% {
+    color: red;
+    border-color: red;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: red;
+  }
+
+  12.5% {
+    color: orange;
+    /* border-color: orange; */
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: orange;
+  }
+
+  25% {
+    color: yellow;
+    /* border-color: yellow; */
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: yellow;
+  }
+
+  37.5% {
+    color: green;
+    /* border-color: green; */
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: green;
+  }
+
+  50% {
+    color: cyan;
+    /* border-color: cyan; */
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: cyan;
+  }
+
+  62.5% {
+    color: blue;
+    /* border-color: blue; */
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: blue;
+  }
+
+  75% {
+    color: purple;
+    /* border-color: purple; */
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: purple;
+  }
+
+  87.5% {
+    color: violet;
+    /* border-color: violet; */
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: violet;
+  }
+
+  100% {
+    color: red;
+    /* border-color: red; */
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: red;
+  }
+}
