@@ -43,7 +43,7 @@ export default function VerticalScrollButton() {
           onClick={scrollToBottom}
           className={styles.DownToUp}
         >
-          ↓ Descer tudo
+          ↓
         </button>
       )}
       {isVisible && (
@@ -51,7 +51,7 @@ export default function VerticalScrollButton() {
           onClick={scrollToTop}
           className={styles.TopToDown}
         >
-          ↑ Subir tudo
+          ↑
         </button>
       )}
     </>

@@ -6,7 +6,7 @@
     background-color: transparent;
     border: 2px solid var(--border-primary-color);
     color: var(--text-primary-color);
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     font-size: 16px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -21,12 +21,66 @@
     background-color: transparent;
     border: 2px solid var(--border-primary-color);
     color: var(--text-primary-color);
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     font-size: 16px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     position: fixed;
-    top: 1%;
+    bottom: 1%;
     right: 5%;
     z-index: 9999;
 }
+
+.DownToUp:hover {
+    animation: htsRainbow 3s linear infinite;
+}
+
+.TopToDown:hover {
+    animation: htsRainbow 3s linear infinite;
+}
+@keyframes htsRainbow {
+    0% {
+      color: red;
+      border-color: red;
+    }
+  
+    12.5% {
+      color: orange;
+      border-color: orange;
+    }
+  
+    25% {
+      color: yellow;
+      border-color: yellow;
+    }
+  
+    37.5% {
+      color: green;
+      border-color: green;
+    }
+  
+    50% {
+      color: cyan;
+      border-color: cyan;
+    }
+  
+    62.5% {
+      color: blue;
+      border-color: blue;
+    }
+  
+    75% {
+      color: purple;
+      border-color: purple;
+    }
+  
+    87.5% {
+      color: violet;
+      border-color: violet;
+    }
+  
+    100% {
+      color: red;
+      border-color: red;
+    }
+  }

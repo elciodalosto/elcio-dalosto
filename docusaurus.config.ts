@@ -59,7 +59,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/logo.png',
     navbar: {
-      title: 'elcio-dalosto',
+      title: 'elcio.dalosto();',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.png',
@@ -96,8 +96,6 @@ const config: Config = {
     footer: {
       style: 'light',
       links: [
-        {},
-        {},
         {
           title: 'Legal',
           items: [
@@ -151,8 +149,6 @@ const config: Config = {
             },
           ],
         },
-        {},
-        {},
       ],
       copyright: `Copyright © from 2025 to ${new Date().getFullYear()} - Elcio Augusto Dalosto.`,
     },
