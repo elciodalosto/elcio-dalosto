@@ -1,5 +1,5 @@
 ---
-sidebar_position: 0
+sidebar_position: 1
 ---
 
 # Sobre
@@ -17,5 +17,5 @@ sidebar_position: 0
 - 🎮 Games (game dev e gaming)
 - 🧙‍♂️ Divagar e trocar ideias sobre coisas que extrapolam o senso comum
 
-### para mais informações, acesse a minha [Linha do tempo](/timeline)
+### para mais informações, acesse a minha [Linha do tempo](/docs/timeline)
 

@@ -76,16 +76,16 @@ const config: Config = {
           position: 'left',
           label: 'MENU',
         },
-        {
-          to: '/timeline',
-          label: 'TIMELINE',
-          position: 'left'
-        },
-        {
-          to: '/about',
-          label: 'ABOUT',
-          position: 'left'
-        },
+        // {
+        //   to: '/timeline',
+        //   label: 'TIMELINE',
+        //   position: 'left'
+        // },
+        // {
+        //   to: '/about',
+        //   label: 'ABOUT',
+        //   position: 'left'
+        // },
         {
           to: '/blog/welcome',
           label: 'BLOG',
@@ -116,11 +116,11 @@ const config: Config = {
           items: [
             {
               label: 'Formações',
-              to: '/timeline/#formations',
+              to: 'docs/timeline/#formations',
             },
             {
               label: 'Experiências',
-              to: '/timeline/#experiences',
+              to: 'docs/timeline/#experiences',
             },
           ],
         },

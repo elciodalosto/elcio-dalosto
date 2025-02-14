@@ -1,8 +1,8 @@
 {
   "label": "Legal",
-  "position": 2,
+  "position": 99,
   "link": {
     "type": "generated-index",
-    "description": "Documentação legal do site."
+    "description": "Aqui você encontra a documentação legal do site."
   }
 }

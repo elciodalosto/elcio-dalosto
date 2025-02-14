@@ -1,10 +1,10 @@
 ---
 slug: welcome
-title: Bem-vindo!
+title: Bem-vindo ao meu blog!
 authors: [elcio-dalosto]
-tags: [docusaurus]
+# tags: [docusaurus]
 ---
 
 ## Bem-vindo!
 
-Este é o primeiro post do meu blog com a ferramenta docusaurus para fins de teste.
+Este é o primeiro post do meu blog com a ferramenta docusaurus para fins de estudos.
