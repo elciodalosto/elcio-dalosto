@@ -3,40 +3,75 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
-
+/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap'); */
 /* You can override the default Infima variables here. */
 :root {
+  /* --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e; */
   /* box-shadow:
   0 0 15px var(--bg-primary-color),
   inset 0 0 5px var(--bg-primary-color),
   inset 0 0 15px var(--bg-primary-color),
   inset 0 0 25px var(--bg-primary-color); */
-  background: linear-gradient(45deg, var(--bg-primary-color), var(--bg-secondary-color));
   scroll-behavior: smooth;
   overflow-y: scroll;
   /* overflow-x: hidden; */
+  /* font-family: Rajdhani;
+  font-size: 1.2em; */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='light'] {
-  --text-primary-color: royalblue;
-  --bg-primary-color: #f5f6f7;
-  --bg-secondary-color: rgb(236, 240, 252);
+[data-theme="light"] {
+  --text-primary-color: #333;
+  --bg-primary-color: #fff;
+  --bg-secondary-color: rgb(160, 217, 255);
   --border-primary-color: royalblue;
+  /* --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf; */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --text-primary-color: #00c3ff;
-  --border-primary-color: #00c3ff;
-  --bg-primary-color: #1c1e21;
-  --bg-secondary-color: #888cd472;
+/* [data-theme="dark"] { */
+/* --text-primary-color: #00c3ff;
+--border-primary-color: #00c3ff; */
+[data-theme="dark"] {
+  --text-primary-color: #ccc;
+  --bg-primary-color: #1b1b1d;
+  --bg-secondary-color: #456;
+  /* --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #24ba9a;
+  --ifm-color-primary-darker: #24ba9a;
+  --ifm-color-primary-darkest: #24ba9a;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf; */
 }
 
-
+.lp {
+  animation: htsRainbowBG 24s linear infinite;
+  background: linear-gradient(
+    0deg,
+    var(--bg-primary-color),
+    var(--bg-secondary-color)
+  );
+}
 /* oculta o botão de Scroll Up nativo do docusaurus */
 .theme-back-to-top-button {
   display: none;
+}
+
+.footer {
+  background-color: transparent;
 }
 
 .main-wrapper {
@@ -48,7 +83,6 @@
   justify-content: center;
   background-color: var(--bg-primary-color);
 }
-
 
 aside {
   overflow-y: auto;
@@ -63,14 +97,11 @@ aside {
 
 .navbar__item {
   border: 2px solid transparent;
-  border-radius: 50px;
 }
 
 .navbar__item:hover {
-  /* text-decoration: underline; */
-  border: 2px solid red;
+  border-radius: 30px;
   animation: htsRainbow 3s linear infinite;
-
 }
 
 .DownToUp {
@@ -79,7 +110,6 @@ aside {
 
 li a:hover {
   animation: htsRainbow 3s linear infinite;
-
 }
 
 @keyframes htsRainbow {
@@ -162,5 +192,43 @@ li a:hover {
     border-left-color: transparent;
     border-right-color: transparent;
     border-bottom-color: red;
+  }
+}
+
+@keyframes htsRainbowBG {
+  0% {
+    background-color: red;
+  }
+
+  12.5% {
+    background-color: orange;
+  }
+
+  25% {
+    background-color: yellow;
+  }
+
+  37.5% {
+    background-color: green;
+  }
+
+  50% {
+    background-color: cyan;
+  }
+
+  62.5% {
+    background-color: blue;
+  }
+
+  75% {
+    background-color: purple;
+  }
+
+  87.5% {
+    background-color: violet;
+  }
+
+  100% {
+    background-color: red;
   }
 }
