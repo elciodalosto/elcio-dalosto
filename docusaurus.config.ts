@@ -68,7 +68,7 @@ const config: Config = {
       logo: {
         alt: "HTS Logo",
         src: "img/logo.png",
-        href: "/lp",
+        href: "/",
         target: "_self",
         style: {
           scale: "1",
